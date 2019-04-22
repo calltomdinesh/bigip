@@ -1,7 +1,7 @@
 ---
 
 - name: Create a VIP, pool and pool members
-  hosts: bigip
+  hosts: localhost
   connection: local
   vars:
     provider:
