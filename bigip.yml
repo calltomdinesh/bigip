@@ -4,12 +4,12 @@
   hosts: bigip
   connection: local
   vars:
-  provider:
-    password: Deloitte123
-    server: 172.31.13.87
-    user: admin
-    validate_certs: no
-    server_port: 443
+    provider:
+      password: Deloitte123
+      server: 172.31.13.87
+      user: admin
+      validate_certs: no
+      server_port: 443
 
   tasks:
     - name: Create a pool
