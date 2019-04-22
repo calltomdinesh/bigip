@@ -49,7 +49,7 @@
       bigip_virtual_server:
         provider: "{{ provider }}"
         description: foo-vip
-        destination: 172.31.13.87
+        destination: 13.210.197.149
         name: vip-1
         pool: web
         port: 443
