@@ -34,6 +34,16 @@
         - host: 172.31.5.228
           name: web02
       delegate_to: localhost
+     
+    - name: Set http monitor 
+        bigip_pool:
+          provider: "{{ provider }}"
+          state: present
+          name: web
+          partition: Common
+          monitors:
+            - http
+        delegate_to: localhost
 
     - name: Create a VIP
       bigip_virtual_server:
