@@ -29,12 +29,10 @@
         pool: web
         port: 80
       with_items:
-        - host: 172.31.12.173
+        - host: 172.31.4.1
           name: web01
-        - host: 172.31.5.228
+        - host: 172.31.2.236
           name: web02
-        - host: 172.31.8.221
-          name: web03
       delegate_to: localhost
      
     - name: Set http monitor 
