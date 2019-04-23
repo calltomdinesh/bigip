@@ -1,12 +1,12 @@
 ---
 
 - name: Create a VIP, pool and pool members
-  hosts: bigip
+  hosts: localhost
   connection: local
   vars:
     provider:
       password: Deloitte123
-      server: 172.31.13.87
+      server: 13.210.197.149
       user: admin
       validate_certs: no
       server_port: 8443
