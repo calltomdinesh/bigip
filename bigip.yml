@@ -33,6 +33,8 @@
           name: web01
         - host: 172.31.5.228
           name: web02
+        - host: 172.31.8.221
+          name: web03
       delegate_to: localhost
      
     - name: Set http monitor 
