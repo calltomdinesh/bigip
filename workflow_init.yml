@@ -3,4 +3,4 @@
   connection: local
   tasks:
     - debug:
-      msg: "Deployed by Ansible Tower"
+        msg: "Deployed by Ansible Tower"
