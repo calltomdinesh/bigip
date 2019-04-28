@@ -1,0 +1,5 @@
+- name: First job of workflow
+  hosts: localhost
+  connection: local
+- debug:
+    msg: "Deployed by Ansible Tower"
