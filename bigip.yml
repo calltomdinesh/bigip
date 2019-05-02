@@ -6,7 +6,7 @@
   vars:
     provider:
       password: Deloitte123
-      server: 172.31.9.158
+      server: 13.210.197.149
       user: admin
       validate_certs: no
       server_port: 8443
@@ -51,7 +51,7 @@
       bigip_virtual_server:
         provider: "{{ provider }}"
         description: foo-vip
-        destination: 3.105.133.19
+        destination: 13.210.197.149
         name: vip-1
         pool: web
         port: 443
