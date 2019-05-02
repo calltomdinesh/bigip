@@ -5,7 +5,7 @@
   connection: local
   vars:
     provider:
-      password: Deloitte12
+      password: Deloitte123
       server: 13.210.197.149
       user: admin
       validate_certs: no
