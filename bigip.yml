@@ -6,7 +6,7 @@
   vars:
     provider:
       password: Deloitte123
-      server: https://13.238.14.122
+      server: 13.238.14.122
       user: admin
       validate_certs: no
       server_port: 8443
