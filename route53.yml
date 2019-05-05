@@ -11,6 +11,6 @@
         zone: sandpit.click
         record: bigip.sandpit.click
         type: A
-        value: "LTM-LB-1-914382731.ap-southeast-2.elb.amazonaws.com"
+        value: LTM-LB-1-914382731.ap-southeast-2.elb.amazonaws.com
         alias: True
-        alias_hosted_zone_id: "Z2JG797ORKISZ5"
+        alias_hosted_zone_id: Z2JG797ORKISZ5
