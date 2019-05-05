@@ -1,0 +1,60 @@
+---
+
+- name: Create a VIP, pool and pool members
+  hosts: localhost
+  connection: local
+  vars:
+    provider:
+      password: Deloitte123
+      server: 13.210.13.235
+      user: admin
+      validate_certs: no
+      server_port: 8443
+
+  tasks:
+    - name: Create a pool
+      bigip_pool:
+        provider: "{{ provider }}"
+        lb_method: round-robin
+        name: web
+        slow_ramp_time: 120
+      delegate_to: localhost
+
+    - name: Add members to pool
+      bigip_pool_member:
+        provider: "{{ provider }}"
+        description: "webserver {{ item.name }}"
+        host: "{{ item.host }}"
+        name: "{{ item.name }}"
+        pool: web
+        port: 80
+      with_items:
+        - host: 172.31.21.46
+          name: web01
+        - host: 172.31.16.121
+          name: web02
+      delegate_to: localhost
+     
+    - name: Set http monitor 
+      bigip_pool:
+        provider: "{{ provider }}"
+        state: present
+        name: web
+        partition: Common
+        monitors:
+          - http
+      delegate_to: localhost
+
+    - name: Create a VIP
+      bigip_virtual_server:
+        provider: "{{ provider }}"
+        description: foo-vip
+        destination: 172.31.30.240
+        name: vip-1
+        pool: web
+        port: 443
+        snat: Automap
+        profiles:
+          - http
+          - clientssl
+      delegate_to: localhost
