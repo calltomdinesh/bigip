@@ -1,0 +1,17 @@
+---
+
+- name: Create route53 alias record that points to AWS ELB
+  hosts: localhost
+  connection: local
+
+  tasks:
+    - name: Create a route53 alias record that points to AWS ELB
+      route53:
+        state: present
+        zone: sandpit.click
+        record: webpool-1.sandpit.click
+        type: A
+        value: "{{elb}}"
+        alias: True
+        alias_hosted_zone_id: Z1GM3OXH4ZPM65
+        overwrite: yes
