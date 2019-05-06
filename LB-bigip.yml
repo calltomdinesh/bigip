@@ -29,7 +29,7 @@
         pool: web
         port: 80
       with_items:
-        - host: F5-Webpool-1-1057794621.ap-southeast-2.elb.amazonaws.com
+        - host: webpool-1.sandpit.click
           name: web01
       delegate_to: localhost
      
