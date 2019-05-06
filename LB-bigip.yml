@@ -24,12 +24,12 @@
       bigip_pool_member:
         provider: "{{ provider }}"
         description: "webserver {{ item.name }}"
-        host: "{{ item.host }}"
+        fqdn: "{{ item.host }}"
         name: "{{ item.name }}"
         pool: web
         port: 80
       with_items:
-        - fqdn: F5-Webpool-1-1057794621.ap-southeast-2.elb.amazonaws.com
+        - host: F5-Webpool-1-1057794621.ap-southeast-2.elb.amazonaws.com
           name: web01
       delegate_to: localhost
      
