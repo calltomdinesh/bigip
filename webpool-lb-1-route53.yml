@@ -11,7 +11,7 @@
         zone: sandpit.click
         record: webpool-1.sandpit.click
         type: A
-        value: "{{elb}}"
+        value: F5-Webpool-1-1057794621.ap-southeast-2.elb.amazonaws.com
         alias: True
         alias_hosted_zone_id: Z1GM3OXH4ZPM65
         overwrite: yes
